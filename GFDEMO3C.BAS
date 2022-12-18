@@ -34,11 +34,11 @@ DO
   PCOPY 0, 1
   SLEEP
   keyPress$ = INKEY$
+  'Clear the input buffer
+  DO
+    keyExtra$ = INKEY$
+  LOOP UNTIL LEN(keyExtra$) = 0
 
 
 LOOP UNTIL keyPress$ = keyEsc$
-
-SUB Drawpixel (x%, y%, col%)
-
-END SUB
 
