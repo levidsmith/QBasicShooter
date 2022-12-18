@@ -1,3 +1,4 @@
+'2022 Levi D. Smith - levidsmith.com
 SCREEN 7, 0, 0, 1 '320x200 resolution, 8 video memory pages
 
 CLS

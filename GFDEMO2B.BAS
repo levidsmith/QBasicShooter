@@ -1,3 +1,4 @@
+'2022 Levi D. Smith - levidsmith.com
 'line demo, with double buffering
 SCREEN 9, 0, 0, 1
 
