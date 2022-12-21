@@ -104,9 +104,9 @@ DO
   keyPress$ = INKEY$
  
   'Clear the input buffer
-  DO
-    keyExtra$ = INKEY$
-  LOOP UNTIL LEN(keyExtra$) = 0
+  WHILE INKEY$ <> ""
+  WEND
+
 
 LOOP UNTIL keyPress$ = keyEsc$
 
