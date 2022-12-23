@@ -7,6 +7,9 @@ keyEsc$ = CHR$(27)
 DO
   keyPress$ = INKEY$
 
+  'Clear key buffer
+  WHILE INKEY$ <> "": WEND
+
   CLS
 
   FOR i = 1 TO 50
@@ -22,3 +25,4 @@ DO
 
 
 LOOP UNTIL keyPress$ = keyEsc$
+

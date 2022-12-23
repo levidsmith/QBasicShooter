@@ -7,6 +7,10 @@ keyEsc$ = CHR$(27)
 DO
   keyPress$ = INKEY$
 
+  'Clear key buffer
+  WHILE INKEY$ <> "": WEND
+
+
   CLS
 
   FOR i = 1 TO 50
@@ -18,7 +22,6 @@ DO
     LINE (x1, y1)-(x2, y2), c
 
   NEXT i
-  PCOPY 0, 1
-
 
 LOOP UNTIL keyPress$ = keyEsc$
+

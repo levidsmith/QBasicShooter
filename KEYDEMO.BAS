@@ -109,8 +109,3 @@ DO
 
 
 LOOP UNTIL keyPress$ = keyEsc$
-
-SUB Drawpixel (x%, y%, col%)
-
-END SUB
-

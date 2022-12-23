@@ -1,5 +1,5 @@
 '2022 Levi D. Smith - levidsmith.com
-SCREEN 7 '320x200 resolution, 8 video memory pages
+SCREEN 7 '320x200 resolution
 
 CLS
 DIM imgTree%(32 * 32) '32x32 pixels
@@ -17,9 +17,16 @@ keyEsc$ = CHR$(27)
 x = 0
 y = 0
 
+numFrame = 0
+
 DO
   CLS
   PAINT (0, 0), 2
+
+  LOCATE 1, 36
+  PRINT STR$(numFrame)
+  numFrame = numFrame + 1
+
 
   FOR iCol = 0 TO 9
     FOR iRow = 0 TO 5
@@ -30,13 +37,11 @@ DO
     NEXT iRow
   NEXT iCol
 
-  SLEEP
+'  SLEEP
   keyPress$ = INKEY$
-  'Clear the input buffer
-  DO
-    keyExtra$ = INKEY$
-  LOOP UNTIL LEN(keyExtra$) = 0
 
+  'Clear key buffer
+  WHILE INKEY$ <> "": WEND
 
 LOOP UNTIL keyPress$ = keyEsc$
 

@@ -1,5 +1,5 @@
 '2022 Levi D. Smith - levidsmith.com
-SCREEN 7, 0, 0, 1 '320x200 resolution, 8 video memory pages
+SCREEN 7, 0, 0, 1 '320x200 resolution, using active/visual pages
 
 CLS
 DIM imgTree%(32 * 32) '32x32 pixels
@@ -18,6 +18,8 @@ keyEsc$ = CHR$(27)
 x = 0
 y = 0
 
+numFrame = 1
+
 DO
   CLS
   PAINT (0, 0), 2
@@ -31,14 +33,17 @@ DO
     NEXT iRow
   NEXT iCol
 
-  PCOPY 0, 1
-  SLEEP
-  keyPress$ = INKEY$
-  'Clear the input buffer
-  DO
-    keyExtra$ = INKEY$
-  LOOP UNTIL LEN(keyExtra$) = 0
+  LOCATE 1, 36
+  PRINT STR$(numFrame)
+  numFrame = numFrame + 1
 
+  PCOPY 0, 1
+  'SLEEP
+  keyPress$ = INKEY$
+
+  'Clear the input buffer
+  WHILE INKEY$ <> ""
+  WEND
 
 LOOP UNTIL keyPress$ = keyEsc$
 
