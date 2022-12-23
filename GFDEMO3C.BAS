@@ -18,7 +18,7 @@ keyEsc$ = CHR$(27)
 x = 0
 y = 0
 
-numFrame = 1
+numFrame = 0
 
 DO
   CLS
