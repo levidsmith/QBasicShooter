@@ -1,4 +1,4 @@
-'2022 Levi D. Smith - levidsmith.com
+'Original line drawing code from http://www.tedfelix.com/qbasic/sprites.html
 'line demo, with double buffering
 SCREEN 9, 0, 0, 1
 
@@ -22,8 +22,3 @@ DO
 
 
 LOOP UNTIL keyPress$ = keyEsc$
-
-SUB Drawpixel (x%, y%, col%)
-
-END SUB
-
